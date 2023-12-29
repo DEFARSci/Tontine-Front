@@ -1,125 +1,220 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tontine/reste_tirage.dart';
 
-void main() {
-  runApp(const MyApp());
+
+
+
+
+
+class Participant {
+  final String nom;
+  final String prenom;
+  final int nombreDeMains;
+  final double sommeVersee;
+
+  Participant({
+    required this.nom,
+    required this.prenom,
+    required this.nombreDeMains,
+    required this.sommeVersee,
+  });
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   // ignore: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+   MyApp();
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+       debugShowCheckedModeBanner: false, // C'est cette ligne qui désactive la bannière de débogage
+      title: 'Bienvenue chez Gustu',
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyHomePage extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
+  MyHomePage();
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  final List<Participant> participants = [
+    Participant(nom: 'Doe', prenom: 'John', nombreDeMains: 3, sommeVersee: 30.0),
+    Participant(nom: 'Smith', prenom: 'Jane', nombreDeMains: 5, sommeVersee: 50.0),
+    // Ajoutez d'autres participants selon vos besoins
+  ];
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        // ignore: prefer_const_constructors
+        title: Text('GUSTU'),
+        
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center, // Ajustez cette ligne
+        children: [
+         // ...
+
+Row(
+  crossAxisAlignment: CrossAxisAlignment.start, // Alignez les icônes à gauche
+  children: [
+    IconButton(
+      // ignore: prefer_const_constructors
+      icon: Icon(Icons.home, color: Colors.blue),
+      onPressed: () {
+        // ignore: avoid_print
+        print('Home icon clicked');
+      },
+    ),
+    IconButton(
+      // ignore: prefer_const_constructors
+      icon: Icon(Icons.message, color: Colors.blue),
+      onPressed: () {
+        // ignore: avoid_print
+        print('Message icon clicked');
+      },
+    ),
+    IconButton(
+      // ignore: prefer_const_constructors
+      icon: Icon(Icons.settings, color: Colors.blue),
+      onPressed: () {
+        // ignore: avoid_print
+        print('Settings icon clicked');
+      },
+    ),
+    IconButton(
+      // ignore: prefer_const_constructors
+      icon: Icon(Icons.search, color: Colors.blue),
+      onPressed: () {
+        // ignore: avoid_print
+        print('Search icon clicked');
+      },
+    ),
+  ],
+),
+
+// ...
+          // ignore: prefer_const_constructors
+          SizedBox(height: 20),
+         Center(
+  child:ElevatedButton(
+  onPressed: () {
+    // ignore: avoid_print
+    print('Participant button clicked');
+  },
+  style: ElevatedButton.styleFrom(
+    // ignore: deprecated_member_use
+    primary: Colors.blue, // Spécifie la couleur de fond
+  ),
+  // ignore: prefer_const_constructors
+  child: Text(
+    'Participant',
+    // ignore: prefer_const_constructors
+    style: TextStyle(color: Colors.white), // Couleur du texte
+  ),
+),
+
+),
+
+          // ignore: prefer_const_constructors
+          SizedBox(height: 20),
+          Wrap(
+            spacing: 10.0,
+            children: [
+              // ...
+
+ElevatedButton(
+  onPressed: () {
+    // Utilisez MaterialPageRoute pour la navigation normale
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ResteTirage()),
+    );
+  },
+  style: ElevatedButton.styleFrom(
+    primary: Colors.blue,
+  ),
+  child: Text(
+    'Reste tirage',
+    style: TextStyle(color: Colors.white),
+  ),
+),
+
+
+ElevatedButton(
+  onPressed: () {
+    // ignore: avoid_print
+    print('Recu argent button clicked');
+  },
+  style: ElevatedButton.styleFrom(
+    // ignore: deprecated_member_use
+    primary: Colors.blue,
+  ),
+  // ignore: prefer_const_constructors
+  child: Text(
+    'Recu argent',
+    // ignore: prefer_const_constructors
+    style: TextStyle(color: Colors.white),
+  ),
+),
+
+ElevatedButton(
+  onPressed: () {
+    // ignore: avoid_print
+    print('Nombres button clicked');
+  },
+  style: ElevatedButton.styleFrom(
+    // ignore: deprecated_member_use
+    primary: Colors.blue,
+  ),
+  // ignore: prefer_const_constructors
+  child: Text(
+    'Nombres',
+    // ignore: prefer_const_constructors
+    style: TextStyle(color: Colors.white),
+  ),
+),
+            ],
+          ),
+          // ignore: prefer_const_constructors
+          SizedBox(height: 10),
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: DataTable(
+                // ignore: prefer_const_literals_to_create_immutables
+                columns: [
+                  // ignore: prefer_const_constructors
+                  DataColumn(label: Text('Nom')),
+                  // ignore: prefer_const_constructors
+                  DataColumn(label: Text('Prenom')),
+                  // ignore: prefer_const_constructors
+                  DataColumn(label: Text('Nombre de Mains')),
+                  // ignore: prefer_const_constructors
+                  DataColumn(label: Text('Somme Versée')),
+                ],
+                rows: participants.map((participant) {
+                  return DataRow(
+                    cells: [
+                      DataCell(Text(participant.nom)),
+                      DataCell(Text(participant.prenom)),
+                      DataCell(Text(participant.nombreDeMains.toString())),
+                      DataCell(Text(participant.sommeVersee.toString())),
+                    ],
+                  );
+                }).toList(),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+void main() {
+  runApp( MyApp());
 }
