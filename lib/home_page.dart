@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Tontine-Front/login_page.dart';
+import 'login_page.dart';
 
 
 void main() {

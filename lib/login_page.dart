@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Tontine-Front/registration_page.dart';
+import 'registration_page.dart';
 
 void main() {
   runApp(MyApp());
