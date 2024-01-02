@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'registration_page.dart';
+import 'list_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,8 +59,10 @@ class LoginPage extends StatelessWidget {
                 // Bouton de connexion
                 ElevatedButton(
                   onPressed: () {
-                    // Ajoutez ici le code de connexion
-                    print('Connecté');
+                     Navigator.push(
+                          context,
+                        MaterialPageRoute(builder: (context) => ListPage()),
+                     );
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.blue[900], // Couleur de fond du bouton
