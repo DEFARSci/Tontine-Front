@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
+import '../list_page.dart';
 
 class ApresCon extends StatelessWidget {
   const ApresCon({Key? key}) : super(key: key);
@@ -174,9 +175,12 @@ class ApresCon extends StatelessWidget {
                               child: Text(value),
                             );
                           }).toList(),
+    
                           onChanged: (String? newValue) {
                             // Ajouter la logique du dropdown
+                            
                           },
+                          
                           hint: Text(
                             'Mes Projets',
                             style: TextStyle(
@@ -199,6 +203,24 @@ class ApresCon extends StatelessWidget {
                         },
                         child: Text(
                           'Nouveau Projet',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 23, 12, 148),
+                          ),
+                        ),
+                      ),
+
+                      //liste des tirages
+                          ElevatedButton(
+                        onPressed: () {
+                          // Ajouter la logique du bouton droit
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ListPage()),
+                          );
+                        },
+                        child: Text(
+                          'Liste des tirages',
                           style: TextStyle(
                             color: Color.fromARGB(255, 23, 12, 148),
                           ),
