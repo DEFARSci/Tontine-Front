@@ -172,7 +172,40 @@ class ApresCon extends StatelessWidget {
                           items: ['Leket bi', 'Caisse bi'].map((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: Row(
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      if (value == 'Leket bi') {
+                                        // Action pour Leket bi
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  MenuProjet()),
+                                        );
+                                        // Ajouter la logique du bouton Leket bi
+                                      } else if (value == 'Caisse bi') {
+                                        // Action pour Caisse bi
+                                        // Ajouter la logique du bouton Caisse bi
+                                      }
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      primary:
+                                          Color.fromARGB(255, 230, 231, 232),
+                                      onPrimary: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      side: BorderSide(
+                                        color: Color.fromARGB(255, 23, 12, 148),
+                                        width: 2.0,
+                                      ),
+                                    ),
+                                    child: Text(value),
+                                  ),
+                                ],
+                              ),
                             );
                           }).toList(),
     
