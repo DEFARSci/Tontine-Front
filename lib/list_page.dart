@@ -63,7 +63,7 @@ Row(
   children: [
     IconButton(
       // ignore: prefer_const_constructors
-      icon: Icon(Icons.home, color: Colors.blue),
+      icon: Icon(Icons.home, color: Color.fromARGB(255, 23, 12, 148),),
       onPressed: () {
         // ignore: avoid_print
         print('Home icon clicked');
@@ -71,7 +71,7 @@ Row(
     ),
     IconButton(
       // ignore: prefer_const_constructors
-      icon: Icon(Icons.message, color: Colors.blue),
+      icon: Icon(Icons.message, color: Color.fromARGB(255, 23, 12, 148),),
       onPressed: () {
         // ignore: avoid_print
         print('Message icon clicked');
@@ -79,7 +79,7 @@ Row(
     ),
     IconButton(
       // ignore: prefer_const_constructors
-      icon: Icon(Icons.settings, color: Colors.blue),
+      icon: Icon(Icons.settings, color: Color.fromARGB(255, 23, 12, 148),),
       onPressed: () {
         // ignore: avoid_print
         print('Settings icon clicked');
@@ -87,7 +87,7 @@ Row(
     ),
     IconButton(
       // ignore: prefer_const_constructors
-      icon: Icon(Icons.search, color: Colors.blue),
+      icon: Icon(Icons.search, color: Color.fromARGB(255, 23, 12, 148),),
       onPressed: () {
         // ignore: avoid_print
         print('Search icon clicked');
@@ -107,7 +107,7 @@ Row(
   },
   style: ElevatedButton.styleFrom(
     // ignore: deprecated_member_use
-    primary: Colors.blue, // Spécifie la couleur de fond
+    primary: Color.fromARGB(255, 23, 12, 148), // Spécifie la couleur de fond
   ),
   // ignore: prefer_const_constructors
   child: Text(
@@ -135,7 +135,7 @@ ElevatedButton(
     );
   },
   style: ElevatedButton.styleFrom(
-    primary: Colors.blue,
+    primary: Color.fromARGB(255, 23, 12, 148),
   ),
   child: Text(
     'Reste tirage',
@@ -151,7 +151,7 @@ ElevatedButton(
   },
   style: ElevatedButton.styleFrom(
     // ignore: deprecated_member_use
-    primary: Colors.blue,
+    primary: Color.fromARGB(255, 23, 12, 148),
   ),
   // ignore: prefer_const_constructors
   child: Text(
@@ -168,7 +168,7 @@ ElevatedButton(
   },
   style: ElevatedButton.styleFrom(
     // ignore: deprecated_member_use
-    primary: Colors.blue,
+    primary: Color.fromARGB(255, 23, 12, 148),
   ),
   // ignore: prefer_const_constructors
   child: Text(

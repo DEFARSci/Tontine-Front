@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
+import 'package:tontinefront/list_page.dart';
+import 'package:tontinefront/pages/list_versement.dart';
+import 'package:tontinefront/pages/list_amandes.dart';
 
 class MenuProjet extends StatelessWidget {
   const MenuProjet({Key? key}) : super(key: key);
@@ -116,12 +119,11 @@ class MenuProjet extends StatelessWidget {
                         // Ajouter la logique du bouton droit
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => CreatProjet()),
-                        );
+                        MaterialPageRoute(builder: (context) => ListPage()),
+                     );
                       },
                       child: Text(
-                        'PARTICIPANT',
+                        'liste des participants',
                         style: TextStyle(
                           color: Color.fromARGB(255, 23, 12, 148),
                         ),
@@ -194,7 +196,7 @@ class MenuProjet extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CreatProjet()),
+                              builder: (context) => ListVersement()),
                         );
                       },
                       child: Text(
@@ -212,7 +214,7 @@ class MenuProjet extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CreatProjet()),
+                              builder: (context) => ListAmandes()),
                         );
                       },
                       child: Text(

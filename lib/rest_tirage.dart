@@ -39,25 +39,25 @@ class ResteTirage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconButton(
-                icon: Icon(Icons.home, color: Colors.blue),
+                icon: Icon(Icons.home, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Home icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.message, color: Colors.blue),
+                icon: Icon(Icons.message, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Message icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.settings, color: Colors.blue),
+                icon: Icon(Icons.settings, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Settings icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.search, color: Colors.blue),
+                icon: Icon(Icons.search, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Search icon clicked');
                 },
@@ -72,7 +72,7 @@ class ResteTirage extends StatelessWidget {
                 print('Reste tirage button clicked');
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
+                primary: Color.fromARGB(255, 23, 12, 148),
               ),
               child: Text(
                 'Reste tirage',
@@ -90,7 +90,7 @@ class ResteTirage extends StatelessWidget {
                   print('Recu argent button clicked');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
                 child: Text(
                   'Recu argent',
@@ -102,7 +102,7 @@ class ResteTirage extends StatelessWidget {
                   print('Nombres button clicked');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
                 child: Text(
                   'Nombres',

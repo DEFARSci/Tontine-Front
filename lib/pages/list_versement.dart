@@ -35,25 +35,25 @@ class ListVersement extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconButton(
-                icon: Icon(Icons.home, color: Colors.blue),
+                icon: Icon(Icons.home, color: Color.fromARGB(255, 23, 12, 148)),
                 onPressed: () {
                   print('Home icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.message, color: Colors.blue),
+                icon: Icon(Icons.message, color: Color.fromARGB(255, 23, 12, 148)),
                 onPressed: () {
                   print('Message icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.settings, color: Colors.blue),
+                icon: Icon(Icons.settings, color: Color.fromARGB(255, 23, 12, 148)),
                 onPressed: () {
                   print('Settings icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.search, color: Colors.blue),
+                icon: Icon(Icons.search, color: Color.fromARGB(255, 23, 12, 148)),
                 onPressed: () {
                   print('Search icon clicked');
                 },
@@ -68,7 +68,7 @@ class ListVersement extends StatelessWidget {
                 print('Validation Versement');
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
+                primary: Color.fromARGB(255, 23, 12, 148),
               ),
               child: Text(
                 'Validation Versement',
@@ -86,7 +86,7 @@ class ListVersement extends StatelessWidget {
                   print('Recu argent button clicked');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
                 child: Text(
                   'Recu argent',
@@ -98,7 +98,7 @@ class ListVersement extends StatelessWidget {
                   print('Reste Tirage button clicked');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
                 child: Text(
                   'Reste Tirage',
@@ -141,7 +141,7 @@ class ListVersement extends StatelessWidget {
   },
   style: ElevatedButton.styleFrom(
     // ignore: deprecated_member_use
-    primary: Colors.blue, // Spécifie la couleur de fond
+    primary: Color.fromARGB(255, 23, 12, 148), // Spécifie la couleur de fond
   ),
   // ignore: prefer_const_constructors
   child: Text(

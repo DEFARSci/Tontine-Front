@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tontinefront/list_page.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({Key? key}) : super(key: key);
@@ -78,13 +79,17 @@ class MenuPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  print('Participant button clicked');
+                  // print('Participant button clicked');
+                   Navigator.push(
+                          context,
+                        MaterialPageRoute(builder: (context) => ListPage()),
+                     );
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue,
                 ),
                 child: Text(
-                  'Participant',
+                  'liste participant',
                   style: TextStyle(color: Colors.white),
                 ),
               ),

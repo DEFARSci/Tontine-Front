@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
 import 'package:tontinefront/pages/menuprojet.dart';
 
+
 class ApresCon extends StatelessWidget {
   const ApresCon({Key? key}) : super(key: key);
 
@@ -243,22 +244,22 @@ class ApresCon extends StatelessWidget {
                       ),
 
                       //liste des tirages
-                          ElevatedButton(
-                        onPressed: () {
-                          // Ajouter la logique du bouton droit
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ListPage()),
-                          );
-                        },
-                        child: Text(
-                          'Liste des tirages',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 23, 12, 148),
-                          ),
-                        ),
-                      ),
+                      //     ElevatedButton(
+                      //   onPressed: () {
+                      //     // Ajouter la logique du bouton droit
+                      //     Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => ListPage()),
+                      //     );
+                      //   },
+                      //   child: Text(
+                      //     'Liste des tirages',
+                      //     style: TextStyle(
+                      //       color: Color.fromARGB(255, 23, 12, 148),
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ],

@@ -35,25 +35,25 @@ class ListAmandes extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconButton(
-                icon: Icon(Icons.home, color: Colors.blue),
+                icon: Icon(Icons.home, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Home icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.message, color: Colors.blue),
+                icon: Icon(Icons.message, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Message icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.settings, color: Colors.blue),
+                icon: Icon(Icons.settings, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Settings icon clicked');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.search, color: Colors.blue),
+                icon: Icon(Icons.search, color: Color.fromARGB(255, 23, 12, 148),),
                 onPressed: () {
                   print('Search icon clicked');
                 },
@@ -68,7 +68,7 @@ class ListAmandes extends StatelessWidget {
                 print('Amandes');
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
+                primary: Color.fromARGB(255, 23, 12, 148),
               ),
               child: Text(
                 'Amandes',
@@ -86,7 +86,7 @@ class ListAmandes extends StatelessWidget {
                   print('Recu argent button clicked');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
                 child: Text(
                   'Recu argent',
@@ -98,7 +98,7 @@ class ListAmandes extends StatelessWidget {
                   print('Reste Tirage button clicked');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
                 child: Text(
                   'Reste Tirage',
