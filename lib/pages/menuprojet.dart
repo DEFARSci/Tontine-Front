@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tontinefront/pages/apres_tirage.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
 import 'package:tontinefront/list_page.dart';
@@ -154,8 +155,7 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => ListVersement()),
+                        MaterialPageRoute(builder: (context) => ApresTirage()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
