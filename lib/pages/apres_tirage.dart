@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
+import 'package:tontinefront/pages/details_profile.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
 import 'package:tontinefront/list_page.dart';
 import 'package:tontinefront/pages/list_versement.dart';
@@ -170,7 +171,11 @@ class ApresTirage extends StatelessWidget {
                   SizedBox(height: 16.0),
                   ElevatedButton(
                     onPressed: () {
-                      // Ajouter la logique du deuxième bouton
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailProfile()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size((largeurEcran - 52 - 20) / 2,
