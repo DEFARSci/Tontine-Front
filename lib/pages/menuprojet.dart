@@ -174,7 +174,7 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListAmandes()),
+                        MaterialPageRoute(builder: (context) => ListVersement()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
