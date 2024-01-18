@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tontinefront/list_recuargent.dart';
+import 'package:tontinefront/pages/widgets/header.dart';
 
 class Participant {
   final String nom;
@@ -19,124 +21,106 @@ class ResteTirage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Exemple de données de participants
-    List<Participant> participants = [
-      Participant(nom: 'John', prenom: 'Doe', nombreDeMains: 2, sommeVersee: 100.0),
-      Participant(nom: 'Jane', prenom: 'Doe', nombreDeMains: 3, sommeVersee: 150.0),
-      // Ajoutez d'autres participants au besoin
+    List<Participant> versements = [
+      Participant(
+          nom: 'John', prenom: 'Doe', nombreDeMains: 2, sommeVersee: 100.0),
+      Participant(
+          nom: 'Jane', prenom: 'Doe', nombreDeMains: 3, sommeVersee: 150.0),
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Reste Tirage'),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // ... Ajoutez d'autres widgets ici
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              IconButton(
-                icon: Icon(Icons.home, color: Color.fromARGB(255, 23, 12, 148),),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 140,
+              child: HeaderSection(),
+            ),
+            SizedBox(height: 20),
+            Center(
+              child: ElevatedButton(
                 onPressed: () {
-                  print('Home icon clicked');
+                  print('Argent reçu button clicked');
                 },
-              ),
-              IconButton(
-                icon: Icon(Icons.message, color: Color.fromARGB(255, 23, 12, 148),),
-                onPressed: () {
-                  print('Message icon clicked');
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.settings, color: Color.fromARGB(255, 23, 12, 148),),
-                onPressed: () {
-                  print('Settings icon clicked');
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.search, color: Color.fromARGB(255, 23, 12, 148),),
-                onPressed: () {
-                  print('Search icon clicked');
-                },
-              ),
-            ],
-          ),
-
-          SizedBox(height: 20),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                print('Reste tirage button clicked');
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 23, 12, 148),
-              ),
-              child: Text(
-                'Reste tirage',
-                style: TextStyle(color: Colors.white),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 23, 12, 148),
+                ),
+                child: Text(
+                  'Reste tirage',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
-          ),
-
-          SizedBox(height: 20),
-          Wrap(
-            spacing: 10.0,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  print('Recu argent button clicked');
-                },
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 23, 12, 148),
+            SizedBox(height: 16),
+            Wrap(
+              spacing: 10.0,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    print('Recu argent button clicked');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 23, 12, 148),
+                  ),
+                  child: Text(
+                    'Reçu argent',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                child: Text(
-                  'Recu argent',
-                  style: TextStyle(color: Colors.white),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ListRecuargent()),
+                    );
+                    print('Reste tirage button clicked');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 23, 12, 148),
+                  ),
+                  child: Text(
+                    'Nombre',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                    color: Color.fromARGB(255, 6, 2, 201),
+                    width: 2), // Bordure bleu foncé
               ),
-              ElevatedButton(
-                onPressed: () {
-                  print('Nombres button clicked');
-                },
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 23, 12, 148),
-                ),
-                child: Text(
-                  'Nombres',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-
-          SizedBox(height: 10),
-          Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                columns: [
-                  DataColumn(label: Text('Nom')),
-                  DataColumn(label: Text('Prenom')),
-                  DataColumn(label: Text('Nombre de Mains')),
-                  DataColumn(label: Text('Somme Versée')),
-                ],
-                rows: participants.map((participant) {
-                  return DataRow(
-                    cells: [
-                      DataCell(Text(participant.nom)),
-                      DataCell(Text(participant.prenom)),
-                      DataCell(Text(participant.nombreDeMains.toString())),
-                      DataCell(Text(participant.sommeVersee.toString())),
+              child: SizedBox(
+                height: 200, // Ajustez la hauteur selon vos besoins
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: DataTable(
+                    columns: [
+                      DataColumn(label: Text('Nom')),
+                      DataColumn(label: Text('Prenom')),
+                      DataColumn(label: Text('N. Mains')),
+                      DataColumn(label: Text('Somme Versée')),
                     ],
-                  );
-                }).toList(),
+                    rows: versements.map((versement) {
+                      return DataRow(
+                        cells: [
+                          DataCell(Text(versement.nom)),
+                          DataCell(Text(versement.prenom)),
+                          DataCell(Text(versement.nombreDeMains.toString())),
+                          DataCell(Text(versement.sommeVersee.toString())),
+                        ],
+                      );
+                    }).toList(),
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

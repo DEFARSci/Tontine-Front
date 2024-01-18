@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'home_page.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -21,7 +20,11 @@ class RegistrationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inscription'),
+        title: Text(
+          'Inscription',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Color.fromARGB(255, 207, 206, 233),
       ),
       body: Center(
         child: Padding(
@@ -80,46 +83,46 @@ class RegistrationPage extends StatelessWidget {
                     print('Inscription réussie');
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue[900], // Couleur de fond du bouton
+                    primary: Color.fromARGB(
+                        255, 23, 12, 148), // Couleur de fond du bouton
                   ),
-                  child: Text(
-                    'S\'inscrire',
-                     style: TextStyle(
-                    color: Colors.white,)
-                  ),
+                  child: Text('S\'inscrire',
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
                 ),
-                 SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
 
-            // Lien pour rediriger vers la page d'inscription
-            TextButton(
-              onPressed: () {
-                // Ajoutez ici le code pour rediriger vers la page d'inscription
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
-              },
-              child: Text("Vous avez déjà un compte ? Connectez-vous"),
-            ),
+                // Lien pour rediriger vers la page d'inscription
+                TextButton(
+                  onPressed: () {
+                    // Ajoutez ici le code pour rediriger vers la page d'inscription
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                    );
+                  },
+                  child: Text("Vous avez déjà un compte ? Connectez-vous"),
+                ),
                 SizedBox(height: 8.0),
 
                 // Bouton de retour à la page d'accueil
                 ElevatedButton(
                   onPressed: () {
-                // Utilisez Navigator.pushReplacement pour aller directement à la page d'accueil
+                    // Utilisez Navigator.pushReplacement pour aller directement à la page d'accueil
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => HomePage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue[900], // Couleur de fond du bouton
+                    primary: Color.fromARGB(
+                        255, 23, 12, 148), // Couleur de fond du bouton
                   ),
-                  child: Text(
-                    'Retour à l\'accueil',
-                     style: TextStyle(
-                    color: Colors.white,)
-                    ),
+                  child: Text('Retour à l\'accueil',
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
                 ),
               ],
             ),

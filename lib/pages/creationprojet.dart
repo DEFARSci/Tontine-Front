@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tontinefront/pages/ajout_membre.dart';
+import 'package:tontinefront/pages/mode_amande.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
 
 class CreatProjet extends StatelessWidget {
@@ -14,65 +15,10 @@ class CreatProjet extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 100,
+              height: 140,
               child: HeaderSection(),
             ),
-            SizedBox(
-              height: 0,
-            ),
-            Container(
-              color: Color.fromARGB(255, 255, 255, 255),
-              height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.message,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Message
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.menu,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Menu
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.search,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Recherche
-                    },
-                  ),
-                  Spacer(),
-                  IconButton(
-                    icon: Icon(
-                      Icons.account_circle,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Profil
-                    },
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 16.0),
+
             // Nouveau conteneur avec titre centré et fond arrondi
             Container(
               width: 200,
@@ -196,7 +142,11 @@ class CreatProjet extends StatelessWidget {
                           2 * 10, // Largeur de l'écran moins les marges
                       child: ElevatedButton(
                         onPressed: () {
-                          // Ajouter la logique du bouton du formulaire
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ModeAmande()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 230, 231, 232),

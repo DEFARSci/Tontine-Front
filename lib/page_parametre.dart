@@ -8,10 +8,13 @@ class PageParametre extends StatelessWidget {
     double largeurEcran = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(''),
+        backgroundColor: Color.fromARGB(255, 207, 206, 233),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-           
             SizedBox(height: 16.0),
             // Nouveau conteneur avec titre centré et fond arrondi
             Container(
@@ -24,11 +27,10 @@ class PageParametre extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'Parametres',
+                  'Keule bi',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
                   ),
                 ),
               ),
@@ -49,7 +51,6 @@ class PageParametre extends StatelessWidget {
               child: Form(
                 child: Column(
                   children: [
-                    
                     // Utilisation de Container pour que le bouton ait la même largeur que l'Input
                     Container(
                       width: largeurEcran -
@@ -79,7 +80,7 @@ class PageParametre extends StatelessWidget {
                       ),
                     ),
                     // 2ème input
-                    
+
                     SizedBox(height: 16.0),
                     // Utilisation de Container pour que le bouton ait la même largeur que l'Input
                     Container(

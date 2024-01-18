@@ -41,8 +41,11 @@ class _PasswordPageState extends State<PasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mot de passe'),
-        backgroundColor: Colors.blue,
+        title: Text(
+          'Mot de passe',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Color.fromARGB(255, 207, 206, 233),
       ),
       body: Center(
         child: Form(
@@ -55,11 +58,11 @@ class _PasswordPageState extends State<PasswordPage> {
                   sendResetCodeBySMS(); // Appeler la fonction pour envoyer le code par SMS
                 },
                 child: Text(
-                  'Mot de passe oublié',
+                  'Obtenir un code',
                   style: TextStyle(color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue[900],
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
               ),
               Padding(
@@ -128,7 +131,7 @@ class _PasswordPageState extends State<PasswordPage> {
                   style: TextStyle(color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue[900],
+                  primary: Color.fromARGB(255, 23, 12, 148),
                 ),
               ),
             ],
