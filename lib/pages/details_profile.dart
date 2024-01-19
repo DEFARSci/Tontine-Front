@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
-import 'package:tontinefront/list_page.dart';
 import 'package:tontinefront/pages/list_versement.dart';
 
 class DetailProfile extends StatelessWidget {
@@ -16,64 +15,10 @@ class DetailProfile extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 100,
+              height: 140,
               child: HeaderSection(),
             ),
-            SizedBox(
-              height: 0,
-            ),
-            Container(
-              color: Color.fromARGB(255, 255, 255, 255),
-              height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.message,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Message
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.menu,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Menu
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.search,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Recherche
-                    },
-                  ),
-                  Spacer(),
-                  IconButton(
-                    icon: Icon(
-                      Icons.account_circle,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Profil
-                    },
-                  ),
-                ],
-              ),
-            ),
+
             SizedBox(height: 16.0),
 
             // Nouveau conteneur parent
