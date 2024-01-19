@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tontinefront/pages/password_page.dart';
 import 'registration_page.dart';
 import 'pages/pageapresconnexion.dart';
 
@@ -20,7 +21,11 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Connexion'),
+        title: Text(
+          'Connexion',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Color.fromARGB(255, 207, 206, 233),
       ),
       body: Center(
         child: Padding(
@@ -46,10 +51,13 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 16.0),
-                 // Lien pour la récupération du mot de passe
+                // Lien pour la récupération du mot de passe
                 TextButton(
                   onPressed: () {
-                    // Ajoutez ici le code pour la récupération du mot de passe
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PasswordPage()),
+                    );
                     print('Mot de passe oublié');
                   },
                   child: Text('Mot de passe oublié ?'),
@@ -59,34 +67,35 @@ class LoginPage extends StatelessWidget {
                 // Bouton de connexion
                 ElevatedButton(
                   onPressed: () {
-                     Navigator.push(
-                          context,
-                        MaterialPageRoute(builder: (context) => ApresCon()),
-                     );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ApresCon()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue[900], // Couleur de fond du bouton
+                    primary: Color.fromARGB(
+                        255, 23, 12, 148), // Couleur de fond du bouton
                   ),
-                  child: Text(
-                    'Se connecter',
-                     style: TextStyle(
-                    color: Colors.white,)
-                  ),
+                  child: Text('Se connecter',
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
                 ),
-              SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
 
-            // Lien pour rediriger vers la page d'inscription
-            TextButton(
-              onPressed: () {
-                // Ajoutez ici le code pour rediriger vers la page d'inscription
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RegistrationPage()),
-                );
-              },
-              child: Text("Vous n'avez pas de compte ? Inscrivez-vous"),
-            ),
-                 SizedBox(height: 8.0),
+                // Lien pour rediriger vers la page d'inscription
+                TextButton(
+                  onPressed: () {
+                    // Ajoutez ici le code pour rediriger vers la page d'inscription
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RegistrationPage()),
+                    );
+                  },
+                  child: Text("Vous n'avez pas de compte ? Inscrivez-vous"),
+                ),
+                SizedBox(height: 8.0),
 
                 // Bouton de retour à la page d'accueil
                 TextButton(
@@ -94,15 +103,14 @@ class LoginPage extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue[900], // Couleur de fond du bouton
+                    primary: Color.fromARGB(
+                        255, 23, 12, 148), // Couleur de fond du bouton
                   ),
-                  child: Text(
-                    'Retour à l\'accueil',
-                    style: TextStyle(
-                    color: Colors.white,)
-                  ),
+                  child: Text('Retour à l\'accueil',
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
                 ),
-              
               ],
             ),
           ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tontinefront/list_recuargent.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
 import 'package:tontinefront/pages/details_profile.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
-import 'package:tontinefront/list_page.dart';
 import 'package:tontinefront/pages/list_versement.dart';
+import 'package:tontinefront/rest_tirage.dart';
 
 class ApresTirage extends StatelessWidget {
   const ApresTirage({Key? key}) : super(key: key);
@@ -17,64 +18,10 @@ class ApresTirage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 100,
+              height: 140,
               child: HeaderSection(),
             ),
-            SizedBox(
-              height: 0,
-            ),
-            Container(
-              color: Color.fromARGB(255, 255, 255, 255),
-              height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.message,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Message
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.menu,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Menu
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.search,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Recherche
-                    },
-                  ),
-                  Spacer(),
-                  IconButton(
-                    icon: Icon(
-                      Icons.account_circle,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Profil
-                    },
-                  ),
-                ],
-              ),
-            ),
+
             SizedBox(height: 16.0),
             // Nouveau conteneur avec titre centré et fond arrondi
             Container(
@@ -118,7 +65,11 @@ class ApresTirage extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          // Ajouter la logique du premier bouton
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ResteTirage()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size((largeurEcran - 52 - 20) / 2,
@@ -134,7 +85,11 @@ class ApresTirage extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          // Ajouter la logique du premier bouton
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ListRecuargent()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size((largeurEcran - 52 - 20) / 2,

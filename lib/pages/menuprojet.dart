@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:tontinefront/list_recuargent.dart';
+
 import 'package:tontinefront/pages/apres_tirage.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
+import 'package:tontinefront/pages/liste_participant.dart';
+import 'package:tontinefront/pages/tirages.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
-import 'package:tontinefront/list_page.dart';
 import 'package:tontinefront/pages/list_versement.dart';
 import 'package:tontinefront/pages/list_amandes.dart';
+import 'package:tontinefront/rest_tirage.dart';
+import 'package:tontinefront/retard_versement.dart';
 
 class MenuProjet extends StatelessWidget {
   const MenuProjet({Key? key}) : super(key: key);
@@ -18,64 +23,10 @@ class MenuProjet extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 100,
+              height: 140,
               child: HeaderSection(),
             ),
-            SizedBox(
-              height: 0,
-            ),
-            Container(
-              color: Color.fromARGB(255, 255, 255, 255),
-              height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.message,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Message
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.menu,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Menu
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(
-                      Icons.search,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Recherche
-                    },
-                  ),
-                  Spacer(),
-                  IconButton(
-                    icon: Icon(
-                      Icons.account_circle,
-                      size: 30.0,
-                    ),
-                    color: Color.fromARGB(255, 23, 12, 148),
-                    onPressed: () {
-                      // Ajouter la logique du bouton Profil
-                    },
-                  ),
-                ],
-              ),
-            ),
+
             SizedBox(height: 16.0),
             // Nouveau conteneur avec titre centré et fond arrondi
             Container(
@@ -117,7 +68,8 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListPage()),
+                        MaterialPageRoute(
+                            builder: (context) => ListParticipant()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -136,7 +88,8 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CreatProjet()),
+                        MaterialPageRoute(
+                            builder: (context) => ListRecuargent()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -144,7 +97,7 @@ class MenuProjet extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 16.0),
                     ),
                     child: Text(
-                      'RECU ARGENT',
+                      'REÇU ARGENT',
                       style: TextStyle(
                         color: Color.fromARGB(255, 23, 12, 148),
                       ),
@@ -155,7 +108,7 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ApresTirage()),
+                        MaterialPageRoute(builder: (context) => ResteTirage()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -174,7 +127,8 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListVersement()),
+                        MaterialPageRoute(
+                            builder: (context) => ListVersement()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -193,7 +147,8 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListAmandes()),
+                        MaterialPageRoute(
+                            builder: (context) => RetardVersement()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -231,7 +186,7 @@ class MenuProjet extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListAmandes()),
+                        MaterialPageRoute(builder: (context) => Tirages()),
                       );
                     },
                     style: ElevatedButton.styleFrom(

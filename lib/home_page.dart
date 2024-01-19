@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -19,27 +18,29 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[900], // Fond de couleur bleu foncé
+      backgroundColor:
+          Color.fromARGB(255, 207, 206, 233), // Fond de couleur bleu foncé
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Texte de bienvenue
-            Text(
-              'Bienvenue dans Gëustu',
+            /* Text(
+              'KAAY GNOU NATT',
               style: TextStyle(
-                color: Colors.white, // Couleur du texte en blanc
-                fontSize: 24.0, // Taille du texte
+                color: Color.fromARGB(
+                    255, 23, 12, 148), // Couleur du texte en blanc
+                fontSize: 28.0, // Taille du texte
                 fontWeight: FontWeight.bold, // Gras
               ),
-            ),
+            ),*/
             SizedBox(height: 16.0),
 
             // Logo au centre
             Image.asset(
-              'images/bodian.png', // Remplacez par le chemin de votre image
-              width: 200.0,
-              height: 200.0,
+              'images/leket.png', // Remplacez par le chemin de votre image
+              width: 400.0,
+              height: 400.0,
             ),
             SizedBox(height: 16.0),
 
@@ -54,12 +55,17 @@ class HomePage extends StatelessWidget {
                 print('Commencez');
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white, // Couleur de fond du bouton en blanc
+                primary: Color.fromARGB(
+                    255, 23, 12, 148), // Couleur de fond du bouton en blanc
               ),
               child: Text(
-                'Commencez',
+                'KAAY GNOU NATT',
                 style: TextStyle(
-                  color: Colors.blue[900], // Couleur du texte en bleu foncé
+                  fontFamily: 'Engravers MT',
+                  fontSize: 28.0, // Taille du texte
+                  fontWeight: FontWeight.bold, // Gras
+                  color: const Color.fromARGB(
+                      255, 255, 255, 255), // Couleur du texte en bleu foncé
                 ),
               ),
             ),
