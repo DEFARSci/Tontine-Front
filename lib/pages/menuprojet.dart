@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tontinefront/list_recuargent.dart';
+import 'package:tontinefront/pages/ajout_tirages.dart';
 
 import 'package:tontinefront/pages/apres_tirage.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
@@ -163,44 +164,7 @@ class MenuProjet extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 16.0),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ListAmandes()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 0),
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
-                    ),
-                    child: Text(
-                      'AJOUTER TIRAGES',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 23, 12, 148),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 16.0),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Tirages()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 0),
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
-                    ),
-                    child: Text(
-                      'TIRAGES',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 23, 12, 148),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 16.0),
+                  
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -232,7 +196,7 @@ class MenuProjet extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 16.0),
                     ),
                     child: Text(
-                      'MODIFIER FORMULAIRE',
+                      'REGLEMMENT',
                       style: TextStyle(
                         color: Color.fromARGB(255, 23, 12, 148),
                       ),
@@ -248,7 +212,7 @@ class MenuProjet extends StatelessWidget {
                           // Afficher le calendrier
                           DateTime? pickedDate = await showDatePicker(
                             context: context,
-                            initialDate: DateTime.now(),
+                            initialDate: DateTime.now(), 
                             firstDate: DateTime(2000),
                             lastDate: DateTime(2101),
                           );

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tontinefront/pages/list_versement.dart';
 import 'package:tontinefront/pages/liste_participant.dart';
 import 'package:tontinefront/pages/mode_amande.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
 
-class AjoutMembre extends StatelessWidget {
-  const AjoutMembre({Key? key}) : super(key: key);
+class AjoutVersement extends StatelessWidget {
+  const AjoutVersement({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class AjoutMembre extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'AJOUTER LES MEMBRES DU TONTINE',
+                  'AJOUTER LES VERSEMENT',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -76,35 +77,14 @@ class AjoutMembre extends StatelessWidget {
                     SizedBox(height: 16.0),
                     TextFormField(
                       decoration: InputDecoration(
-                        labelText: 'NOMBRE DE MAIN',
+                        labelText: 'SOMME VERSE',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                     SizedBox(height: 16.0),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: false,
-                          onChanged: (bool? value) {
-                            // Ajouter la logique de la Checkbox "Admin"
-                          },
-                        ),
-                        Text('Admin'),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: false,
-                          onChanged: (bool? value) {
-                            // Ajouter la logique de la Checkbox "Simple"
-                          },
-                        ),
-                        Text('Simple'),
-                      ],
-                    ),
+                    
                     SizedBox(height: 16.0),
                     Container(
                       width: largeurEcran - 2 * 10,
@@ -112,7 +92,7 @@ class AjoutMembre extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListParticipant()),
+                        MaterialPageRoute(builder: (context) => ListVersement()),
                       );
                         },
                         style: ElevatedButton.styleFrom(

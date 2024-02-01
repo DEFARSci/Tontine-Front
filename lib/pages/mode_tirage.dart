@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tontinefront/pages/liste_participant.dart';
-import 'package:tontinefront/pages/mode_amande.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
 
-class AjoutMembre extends StatelessWidget {
-  const AjoutMembre({Key? key}) : super(key: key);
+class ModeTirage extends StatelessWidget {
+  const ModeTirage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class AjoutMembre extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'AJOUTER LES MEMBRES DU TONTINE',
+                  'MODE TIRAGE',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -56,9 +54,21 @@ class AjoutMembre extends StatelessWidget {
               child: Form(
                 child: Column(
                   children: [
+                    Row(
+                      children: [
+                        Text(
+                          'RETARD HEURE',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 23, 12, 148),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
-                        labelText: 'NOM ET PRENOM',
+                        labelText: 'HEURE',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -67,16 +77,7 @@ class AjoutMembre extends StatelessWidget {
                     SizedBox(height: 16.0),
                     TextFormField(
                       decoration: InputDecoration(
-                        labelText: 'NUMERO',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 16.0),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'NOMBRE DE MAIN',
+                        labelText: 'SOMME',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -85,35 +86,38 @@ class AjoutMembre extends StatelessWidget {
                     SizedBox(height: 16.0),
                     Row(
                       children: [
-                        Checkbox(
-                          value: false,
-                          onChanged: (bool? value) {
-                            // Ajouter la logique de la Checkbox "Admin"
-                          },
+                        Text(
+                          'RETARD JOUR',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 23, 12, 148)),
                         ),
-                        Text('Admin'),
                       ],
                     ),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: false,
-                          onChanged: (bool? value) {
-                            // Ajouter la logique de la Checkbox "Simple"
-                          },
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'JAMAIS REÇU',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        Text('Simple'),
-                      ],
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'SOMME REÇU',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
                     ),
                     SizedBox(height: 16.0),
                     Container(
                       width: largeurEcran - 2 * 10,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ListParticipant()),
-                      );
+                          // Ajouter la logique du bouton Valider
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 23, 12, 148),

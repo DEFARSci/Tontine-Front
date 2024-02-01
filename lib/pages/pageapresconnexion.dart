@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tontinefront/pages/creationprojet.dart';
 import 'package:tontinefront/pages/menuprojet.dart';
+import 'package:tontinefront/pages/start.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
 
 class ApresCon extends StatelessWidget {
@@ -85,8 +86,12 @@ class ApresCon extends StatelessWidget {
                               ),
                             );
                           } else if (newValue == 'Caisse bi') {
-                            // Ajouter la logique pour Caisse bi
-                          }
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Start(),
+                              ),
+                            );                          }
                         },
                         hint: Text(
                           'Mes Projets',

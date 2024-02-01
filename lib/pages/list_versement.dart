@@ -46,45 +46,12 @@ class ListVersement extends StatelessWidget {
                   primary: Color.fromARGB(255, 23, 12, 148),
                 ),
                 child: Text(
-                  'Validation Versement',
+                  'LISTE DES VERSEMENT',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Wrap(
-              spacing: 10.0,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    print('Recu argent button clicked');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 23, 12, 148),
-                  ),
-                  child: Text(
-                    'Reçu argent',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ListRecuargent()),
-                    );
-                    print('Reste tirage button clicked');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 23, 12, 148),
-                  ),
-                  child: Text(
-                    'Reste tirage',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ],
-            ),
+            
             Container(
               margin: EdgeInsets.all(10),
               padding: EdgeInsets.all(10.0),

@@ -1,9 +1,13 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:tontinefront/pages/ajout_membre.dart';
+import 'package:tontinefront/pages/ajout_versement.dart';
+import 'package:tontinefront/pages/list_versement.dart';
 import 'package:tontinefront/pages/menuprojet.dart';
 import 'package:tontinefront/pages/widgets/header.dart';
 import 'package:tontinefront/rest_tirage.dart';
+
 
 class Participant {
   final String nom;
@@ -63,14 +67,14 @@ class ListParticipant extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ResteTirage()),
+                      MaterialPageRoute(builder: (context) => AjoutMembre()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Color.fromARGB(255, 23, 12, 148),
                   ),
                   child: const Text(
-                    'Reste tirage',
+                    'AJOUT MEMBRES',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -78,7 +82,7 @@ class ListParticipant extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ResteTirage()),
+                      MaterialPageRoute(builder: (context) => AjoutVersement()),
                     );
                     print('Recu argent button clicked');
                   },
@@ -86,22 +90,11 @@ class ListParticipant extends StatelessWidget {
                     primary: Color.fromARGB(255, 23, 12, 148),
                   ),
                   child: const Text(
-                    'Recu argent',
+                    ' VERSEMENT',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    print('Nombres button clicked');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 23, 12, 148),
-                  ),
-                  child: const Text(
-                    'Nombres',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
+                
               ],
             ),
             SizedBox(height: 10),
